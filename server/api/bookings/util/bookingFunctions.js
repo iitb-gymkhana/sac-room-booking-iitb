@@ -3,6 +3,7 @@ const Room = require('../../rooms/model/Room')
 const User = require('../../users/model/User')
 const Boom = require('boom')
 const moment = require('moment')
+const ObjectId = require('mongoose').Types.ObjectId
 
 async function addRoomDetailsToBooking(booking) {
     const room = await Room.findOne({ _id: booking.room })
@@ -24,7 +25,7 @@ async function checkPrivileges(request, h) {
     const credentials = request.auth.credentials
 
     if (credentials.scope === 'admin' ||
-        credentials.id === booking.user_id) {
+        ObjectId(credentials.id).equals(ObjectId(booking.user_id))) {
             return booking
         }
 
