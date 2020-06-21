@@ -34,7 +34,7 @@
     "bulma-divider": "^2.0.1",
     "bulma-switch": "^2.0.0",
     "flatpickr": "^4.5.2",
-    "jquery": "^3.3.1",
+    "jquery": "^3.5.0",
     "moment": "^2.22.2",
     "ng-http-loader": "^3.1.1",
     "noty": "^3.2.0-beta",
